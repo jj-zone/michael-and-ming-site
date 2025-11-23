@@ -1,0 +1,7 @@
+# Mac files
+.DS_Store
+
+# Common web project files
+/node_modules
+/dist
+/build
