@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,7 @@
   <meta content="Michael and Ming - The dynamic duo of cats" name="description">
   <meta content="Michael and Ming, cats, shelter cats, cat brothers" name="keywords">
   
+  <!-- Favicons -->
   <link href="assets/img/Michael-and-Ming-logo-image.png" rel="icon">
   <link href="assets/img/Michael-and-Ming-logo-image.png" rel="apple-touch-icon">
   
@@ -63,7 +66,7 @@
     #header .logo h1 {
       margin: 0;
       line-height: 1;
-      font-size: 45px;
+      font-size: 50px;
     }
 
     #header .logo h1 a {
@@ -142,7 +145,7 @@
       }
       
       #header .logo h1 {
-        font-size: 40px; /* UPDATED: Increased mobile logo text size */
+        font-size: 24px;
       }
     }
 
@@ -333,7 +336,7 @@
 
     /* Videos Section - with light grey background and subtle white paws */
     .videos-section {
-      padding: 60px 0; /* REMOVED HORIZONTAL PADDING for edge-to-edge scroll */
+      padding: 60px 20px;
       background: #e8e8e8;
       position: relative;
     }
@@ -362,10 +365,12 @@
       z-index: 1;
     }
 
+    /* Fix for content inside videos section to not be inverted */
+    /* No longer needed - removed filter approach */
+
     .videos-section .header {
       text-align: center;
       margin-bottom: 40px;
-      padding: 0 20px; /* Added padding back to the header text */
     }
 
     .videos-section .header h1 {
@@ -386,11 +391,11 @@
       font-size: 1.5rem;
       color: #2c2c2c;
       margin-bottom: 20px;
-      padding-left: 20px; /* Aligns title with content margin */
-      /* border-left was removed here */ 
-      max-width: none;
-      margin-left: 0;
-      margin-right: 0;
+      padding-left: 10px;
+      border-left: 4px solid #ff6b35;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .video-gallery {
@@ -398,9 +403,9 @@
       margin-bottom: 40px;
       overflow: hidden;
       padding: 10px 0;
-      max-width: none; /* Full width container */
-      margin-left: 0;
-      margin-right: 0;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .video-banner {
@@ -408,7 +413,7 @@
       gap: 20px;
       overflow-x: auto;
       scroll-behavior: smooth;
-      padding: 10px 20px; /* ADDED horizontal padding to create space for the first/last card */
+      padding: 10px;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
@@ -444,11 +449,11 @@
     }
 
     .scroll-left {
-      left: 20px; /* Adjusted position to align with new padding */
+      left: 10px;
     }
 
     .scroll-right {
-      right: 20px; /* Adjusted position to align with new padding */
+      right: 10px;
     }
 
     .video-card {
@@ -647,28 +652,15 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
-      .scroll-left {
-        left: 10px; /* Smaller gap on mobile */
-      }
-      .scroll-right {
-        right: 10px; /* Smaller gap on mobile */
-      }
-      .video-banner {
-        padding: 10px 10px; /* Smaller padding on mobile */
-      }
-      .gallery-section-title {
-        padding-left: 10px; /* Smaller padding on mobile */
-      }
-      .videos-section .header {
-        padding: 0 10px; /* Smaller padding on mobile */
-      }
     }
 
     .contact-section > * {
       position: relative;
       z-index: 1;
     }
+
+    /* Fix for content inside contact section to not be inverted */
+    /* No longer needed - removed filter approach */
 
     .contact-section .section-title {
       text-align: left;
@@ -813,6 +805,7 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header id="header">
     <div class="container">
       <div class="logo">
@@ -840,7 +833,9 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section id="hero">
+    <!-- Video Background Layer (z-index: 1) -->
     <div class="hero-video-bg">
       <iframe 
         src="https://www.youtube.com/embed/TajoKa9oJaU?autoplay=1&mute=1&loop=1&playlist=TajoKa9oJaU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
@@ -851,8 +846,10 @@
       </iframe>
     </div>
 
+    <!-- Dark Overlay (z-index: 2) -->
     <div class="hero-overlay"></div>
 
+    <!-- Content Layer (z-index: 10) -->
     <div class="hero-content">
       <div class="hero-text-box">
         <h1>Meet Michael and Ming</h1>
@@ -862,6 +859,7 @@
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about" class="about-section">
     <div class="about-grid">
       <div>
@@ -885,6 +883,7 @@
     </div>
   </section>
 
+  <!-- Videos Section -->
   <section id="videos" class="videos-section">
     <div class="header">
       <h1>Michael and Ming Gallery of Videos</h1>
@@ -955,12 +954,14 @@
       </div>
     </div>
 
+    <!-- Affiliate Disclaimer -->
     <div style="max-width: 1200px; margin: 40px auto 0 auto; padding: 0 20px;">
       <div class="affiliate-disclaimer">
         <strong style="color: #333;">AFFILIATES DISCLAIMER:</strong> <span style="color: #666; font-size: 14px; line-height: 1.6;">Certain Michael and Ming YouTube channel video descriptions may contain links to affiliate websites, and we receive an affiliate commission for any purchases made by you on the affiliate website using such links. The Michael and Ming channel are participants in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for us to earn advertising fees by linking to Amazon.com and affiliated websites.</span>
       </div>
     </div>
 
+    <!-- Video Overlay Modal -->
     <div class="video-overlay" id="videoOverlay" onclick="closeVideo(event)">
       <div class="video-modal">
         <button class="close-button" onclick="closeVideo()">&times;</button>
@@ -972,6 +973,7 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <div class="contact-grid">
       <div>
@@ -994,6 +996,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer id="footer">
     <div class="footer-container">
       <div class="footer-info">
@@ -1057,49 +1060,24 @@
     };
 
     function loadYouTubeThumbnails() {
-      const thumbnailSizes = ['maxresdefault.jpg', 'hqdefault.jpg', 'mqdefault.jpg', 'default.jpg'];
-      
       Object.keys(videoData).forEach(videoKey => {
         const videoId = videoData[videoKey].videoId;
         const thumbnailImg = document.getElementById(`thumb-${videoKey}`);
         
         if (thumbnailImg && videoId) {
-          
-          let currentSizeIndex = 0;
-
-          // Function to attempt loading the next thumbnail size
-          const attemptLoad = () => {
-            if (currentSizeIndex >= thumbnailSizes.length) {
-              // If all attempts fail, use a generic background or stop trying
-              console.error(`Failed to load thumbnail for video ID: ${videoId}`);
-              thumbnailImg.style.opacity = '1';
-              return;
-            }
-
-            const size = thumbnailSizes[currentSizeIndex];
-            const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/${size}`;
-            
-            // Create a temporary Image object to check for errors without changing the main element's source immediately
-            const tempImg = new Image();
-            tempImg.src = thumbnailUrl;
-
-            tempImg.onload = function() {
-              // Success: Set the thumbnail image source
-              thumbnailImg.src = thumbnailUrl;
-              thumbnailImg.style.opacity = '1'; // Make visible on success
-            };
-
-            tempImg.onerror = function() {
-              // Failure: Try the next smaller size
-              currentSizeIndex++;
-              attemptLoad();
-            };
-          };
-
-          // Initial setup and load attempt
+          const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+          thumbnailImg.src = thumbnailUrl;
           thumbnailImg.style.opacity = '0';
           thumbnailImg.style.transition = 'opacity 0.3s ease';
-          attemptLoad();
+          
+          thumbnailImg.onload = function() {
+            this.style.opacity = '1';
+          };
+          
+          thumbnailImg.onerror = function() {
+            this.onerror = null;
+            this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+          };
         }
       });
     }
