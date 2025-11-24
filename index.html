@@ -7,19 +7,6 @@
   <meta content="Michael and Ming - The dynamic duo of cats" name="description">
   <meta content="Michael and Ming, cats, shelter cats, cat brothers" name="keywords">
   
-  <link rel="canonical" href="https://www.michaelandming.com/" />
-  
-  <meta property="og:title" content="Michael and Ming" />
-  <meta property="og:description" content="Michael and Ming - The dynamic duo of cats" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.michaelandming.com/" />
-  <meta property="og:image" content="assets/img/Michael-and-Ming-logo-image.png" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Michael and Ming" />
-  <meta name="twitter:description" content="Michael and Ming - The dynamic duo of cats" />
-  <meta name="twitter:image" content="assets/img/Michael-and-Ming-logo-image.png" />
-  
   <link href="assets/img/Michael-and-Ming-logo-image.png" rel="icon">
   <link href="assets/img/Michael-and-Ming-logo-image.png" rel="apple-touch-icon">
   
@@ -375,6 +362,9 @@
       z-index: 1;
     }
 
+    /* Fix for content inside videos section to not be inverted */
+    /* No longer needed - removed filter approach */
+
     .videos-section .header {
       text-align: center;
       margin-bottom: 40px;
@@ -665,6 +655,9 @@
       position: relative;
       z-index: 1;
     }
+
+    /* Fix for content inside contact section to not be inverted */
+    /* No longer needed - removed filter approach */
 
     .contact-section .section-title {
       text-align: left;
@@ -1003,10 +996,10 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#videos">Episodes</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#videos">Episodes</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
 
@@ -1053,49 +1046,24 @@
     };
 
     function loadYouTubeThumbnails() {
-      const thumbnailSizes = ['maxresdefault.jpg', 'hqdefault.jpg', 'mqdefault.jpg', 'default.jpg'];
-      
       Object.keys(videoData).forEach(videoKey => {
         const videoId = videoData[videoKey].videoId;
         const thumbnailImg = document.getElementById(`thumb-${videoKey}`);
         
         if (thumbnailImg && videoId) {
-          
-          let currentSizeIndex = 0;
-
-          // Function to attempt loading the next thumbnail size
-          const attemptLoad = () => {
-            if (currentSizeIndex >= thumbnailSizes.length) {
-              // If all attempts fail, use a generic background or stop trying
-              console.error(`Failed to load thumbnail for video ID: ${videoId}`);
-              thumbnailImg.style.opacity = '1';
-              return;
-            }
-
-            const size = thumbnailSizes[currentSizeIndex];
-            const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/${size}`;
-            
-            // Create a temporary Image object to check for errors without changing the main element's source immediately
-            const tempImg = new Image();
-            tempImg.src = thumbnailUrl;
-
-            tempImg.onload = function() {
-              // Success: Set the thumbnail image source
-              thumbnailImg.src = thumbnailUrl;
-              thumbnailImg.style.opacity = '1'; // Make visible on success
-            };
-
-            tempImg.onerror = function() {
-              // Failure: Try the next smaller size
-              currentSizeIndex++;
-              attemptLoad();
-            };
-          };
-
-          // Initial setup and load attempt
+          const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+          thumbnailImg.src = thumbnailUrl;
           thumbnailImg.style.opacity = '0';
           thumbnailImg.style.transition = 'opacity 0.3s ease';
-          attemptLoad();
+          
+          thumbnailImg.onload = function() {
+            this.style.opacity = '1';
+          };
+          
+          thumbnailImg.onerror = function() {
+            this.onerror = null;
+            this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+          };
         }
       });
     }
