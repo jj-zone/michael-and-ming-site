@@ -7,6 +7,19 @@
   <meta content="Michael and Ming - The dynamic duo of cats" name="description">
   <meta content="Michael and Ming, cats, shelter cats, cat brothers" name="keywords">
   
+  <link rel="canonical" href="https://www.michaelandming.com/" />
+  
+  <meta property="og:title" content="Michael and Ming" />
+  <meta property="og:description" content="Michael and Ming - The dynamic duo of cats" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.michaelandming.com/" />
+  <meta property="og:image" content="assets/img/Michael-and-Ming-logo-image.png" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Michael and Ming" />
+  <meta name="twitter:description" content="Michael and Ming - The dynamic duo of cats" />
+  <meta name="twitter:image" content="assets/img/Michael-and-Ming-logo-image.png" />
+  
   <link href="assets/img/Michael-and-Ming-logo-image.png" rel="icon">
   <link href="assets/img/Michael-and-Ming-logo-image.png" rel="apple-touch-icon">
   
@@ -63,7 +76,7 @@
     #header .logo h1 {
       margin: 0;
       line-height: 1;
-      font-size: 45px;
+      font-size: 50px;
     }
 
     #header .logo h1 a {
@@ -142,7 +155,7 @@
       }
       
       #header .logo h1 {
-        font-size: 40px; /* UPDATED: Increased mobile logo text size */
+        font-size: 24px;
       }
     }
 
@@ -333,7 +346,7 @@
 
     /* Videos Section - with light grey background and subtle white paws */
     .videos-section {
-      padding: 60px 0; /* REMOVED HORIZONTAL PADDING for edge-to-edge scroll */
+      padding: 60px 20px;
       background: #e8e8e8;
       position: relative;
     }
@@ -365,7 +378,6 @@
     .videos-section .header {
       text-align: center;
       margin-bottom: 40px;
-      padding: 0 20px; /* Added padding back to the header text */
     }
 
     .videos-section .header h1 {
@@ -386,11 +398,11 @@
       font-size: 1.5rem;
       color: #2c2c2c;
       margin-bottom: 20px;
-      padding-left: 20px; /* Aligns title with content margin */
-      /* border-left was removed here */ 
-      max-width: none;
-      margin-left: 0;
-      margin-right: 0;
+      padding-left: 10px;
+      border-left: 4px solid #ff6b35;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .video-gallery {
@@ -398,9 +410,9 @@
       margin-bottom: 40px;
       overflow: hidden;
       padding: 10px 0;
-      max-width: none; /* Full width container */
-      margin-left: 0;
-      margin-right: 0;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .video-banner {
@@ -408,7 +420,7 @@
       gap: 20px;
       overflow-x: auto;
       scroll-behavior: smooth;
-      padding: 10px 20px; /* ADDED horizontal padding to create space for the first/last card */
+      padding: 10px;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
@@ -444,11 +456,11 @@
     }
 
     .scroll-left {
-      left: 20px; /* Adjusted position to align with new padding */
+      left: 10px;
     }
 
     .scroll-right {
-      right: 20px; /* Adjusted position to align with new padding */
+      right: 10px;
     }
 
     .video-card {
@@ -646,22 +658,6 @@
     @media (max-width: 768px) {
       .contact-grid {
         grid-template-columns: 1fr;
-      }
-
-      .scroll-left {
-        left: 10px; /* Smaller gap on mobile */
-      }
-      .scroll-right {
-        right: 10px; /* Smaller gap on mobile */
-      }
-      .video-banner {
-        padding: 10px 10px; /* Smaller padding on mobile */
-      }
-      .gallery-section-title {
-        padding-left: 10px; /* Smaller padding on mobile */
-      }
-      .videos-section .header {
-        padding: 0 10px; /* Smaller padding on mobile */
       }
     }
 
