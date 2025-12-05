@@ -5,7 +5,20 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Michael and Ming</title>
   <meta content="Michael and Ming - The dynamic duo of cats" name="description">
-  <meta content="Michael and Ming, cats, shelter cats, cat brothers" name="keywords">
+  <meta content="Michael and Ming, funny cats, rescued cats, cat videos, shelter cats, cat brothers, popular cat channel, youtube cat episodes" name="keywords">
+  
+  <link rel="canonical" href="https://www.michaelandming.com/" />
+  
+  <meta property="og:title" content="Michael and Ming" />
+  <meta property="og:description" content="Michael and Ming - The dynamic duo of cats" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.michaelandming.com/" />
+  <meta property="og:image" content="assets/img/Michael-and-Ming-logo-image.png" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Michael and Ming" />
+  <meta name="twitter:description" content="Michael and Ming - The dynamic duo of cats" />
+  <meta name="twitter:image" content="assets/img/Michael-and-Ming-logo-image.png" />
   
   <link href="assets/img/Michael-and-Ming-logo-image.png" rel="icon">
   <link href="assets/img/Michael-and-Ming-logo-image.png" rel="apple-touch-icon">
@@ -39,6 +52,13 @@
       transition: all 0.5s;
     }
 
+    /* === START OF HEADER CHANGES === */
+    #header:hover {
+      background: #ff6b35; /* Orange background on hover */
+      box-shadow: 0px 2px 20px rgba(255, 107, 53, 0.6);
+    }
+    /* === END OF HEADER CHANGES === */
+
     #header .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -63,7 +83,7 @@
     #header .logo h1 {
       margin: 0;
       line-height: 1;
-      font-size: 45px;
+      font-size: 50px;
     }
 
     #header .logo h1 a {
@@ -71,7 +91,14 @@
       font-family: 'Bangers', cursive;
       letter-spacing: .5px;
       text-decoration: none;
+      transition: color 0.5s;
     }
+
+    /* === START OF HEADER CHANGES === */
+    #header:hover .logo h1 a {
+      color: #ffffff; /* White logo text on header hover */
+    }
+    /* === END OF HEADER CHANGES === */
 
     /* Navigation */
     .navbar {
@@ -98,13 +125,24 @@
       font-family: 'Nunito', sans-serif;
       color: #7b909a;
       text-decoration: none;
-      transition: 0.3s;
+      transition: color 0.5s;
     }
 
     .navbar a:hover,
     .navbar .active {
       color: #d32f2f;
     }
+
+    /* === START OF HEADER CHANGES === */
+    #header:hover .navbar a {
+      color: #ffffff; /* White nav links on header hover */
+    }
+
+    #header:hover .navbar a:hover,
+    #header:hover .navbar .active {
+      color: #ffd1c7; /* Lighter white/orange accent on hover/active while header is orange */
+    }
+    /* === END OF HEADER CHANGES === */
 
     /* Header Social Links */
     .header-social-links {
@@ -114,13 +152,27 @@
     .header-social-links a {
       color: #7b909a;
       font-size: 20px;
-      transition: 0.3s;
+      transition: color 0.5s;
       text-decoration: none;
     }
 
     .header-social-links a:hover {
       color: #d32f2f;
     }
+    
+    /* === START OF HEADER CHANGES === */
+    #header:hover .header-social-links a {
+      color: #ffffff; /* White social links on header hover */
+    }
+
+    #header:hover .header-social-links a:hover {
+      color: #ffd1c7; /* Lighter white/orange accent on hover while header is orange */
+    }
+    
+    #header:hover .mobile-nav-toggle {
+        color: #ffffff !important; /* White mobile toggle on header hover */
+    }
+    /* === END OF HEADER CHANGES === */
 
     /* Mobile Navigation Toggle */
     .mobile-nav-toggle {
@@ -142,7 +194,7 @@
       }
       
       #header .logo h1 {
-        font-size: 40px; /* UPDATED: Increased mobile logo text size */
+        font-size: 40px; 
       }
     }
 
@@ -277,7 +329,9 @@
     /* About Section - with paw prints background */
     .about-section {
       padding: 80px 20px;
-      background: #ffffff;
+      /* === START OF ABOUT CHANGES === */
+      background: #ff6b35; /* Changed to orange */
+      /* === END OF ABOUT CHANGES === */
       position: relative;
     }
 
@@ -292,7 +346,10 @@
       background-repeat: repeat;
       background-size: auto;
       background-position: center;
-      opacity: 0.30;
+      /* === START OF ABOUT CHANGES === */
+      opacity: 0.15; /* Reduced opacity */
+      filter: invert(1) brightness(2.5); /* Invert and brighten to make paws white */
+      /* === END OF ABOUT CHANGES === */
       pointer-events: none;
       z-index: 0;
     }
@@ -320,16 +377,41 @@
     .about-section h3 {
       font-family: 'Bangers', cursive;
       font-size: 2.5rem;
-      color: #2c2c2c;
+      /* === START OF ABOUT CHANGES === */
+      color: #ffffff; /* White text for contrast */
+      /* === END OF ABOUT CHANGES === */
       margin-bottom: 20px;
     }
 
     .about-section p {
       font-size: 18px;
       line-height: 1.8;
-      color: #333;
+      /* === START OF ABOUT CHANGES === */
+      color: #ffffff; /* White text for contrast */
+      /* === END OF ABOUT CHANGES === */
       margin-bottom: 20px;
     }
+
+    .about-section p strong {
+      /* === START OF ABOUT CHANGES === */
+      color: #000000; /* Darker accent for contrast */
+      /* === END OF ABOUT CHANGES === */
+    }
+
+    .about-section p a.youtube-link {
+        /* === START OF ABOUT CHANGES === */
+        color: #000000; /* Darker link for contrast */
+        border-bottom-color: #000000;
+        /* === END OF ABOUT CHANGES === */
+    }
+
+    .about-section p a.youtube-link:hover {
+        /* === START OF ABOUT CHANGES === */
+        color: #333333; 
+        border-bottom-color: #333333;
+        /* === END OF ABOUT CHANGES === */
+    }
+
 
     /* Videos Section - with light grey background and subtle white paws */
     .videos-section {
@@ -440,7 +522,7 @@
     .scroll-button:hover {
       background: #ff6b35;
       color: white;
-      transform: translateY(-50%) scale(1.1);
+      transform: translateY(-5px) scale(1.1);
     }
 
     .scroll-left {
@@ -617,7 +699,9 @@
     /* Contact Section - with light grey background and NO paws */
     .contact-section {
       padding: 80px 20px;
-      background: #e8e8e8;
+      /* === START OF CONTACT CHANGES === */
+      background: rgba(255, 107, 53, 0.4); /* Lighter orange background */
+      /* === END OF CONTACT CHANGES === */
       position: relative;
     }
 
@@ -1044,7 +1128,7 @@
       },
       'favorite-toy': {
         videoId: 'VOHEkfsWXWU',
-        title: "Michael and Ming's Favorite New Toy"
+        title: "Michael and Ming’s Favorite New Toy"
       },
       'porch-patrol': {
         videoId: 'AfK25aLKxoI',
