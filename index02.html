@@ -239,16 +239,9 @@
       .header-social-links {
           display: none; /* Hide social links on mobile for better space management */
       }
-    }
-    
-    /* === START OF MOBILE MENU FUNCTIONALITY (FIXED Z-INDEX AND STRUCTURE) === */
-    /* State class applied to body when mobile menu is open */
-    .mobile-nav-active {
-        overflow: hidden; /* Prevent scrolling when menu is open */
-    }
-    
-    /* Styling for the Navigation element when mobile menu is active */
-    .mobile-nav-active .navbar {
+      
+      /* FIX: Define the closed, fixed state for the mobile menu container */
+      .navbar {
         position: fixed;
         top: 0;
         right: 0;
@@ -256,10 +249,17 @@
         width: 250px;
         background-color: #fff;
         padding: 0;
-        z-index: 10001; /* FIX: Above the backdrop */
+        z-index: 10001;
         box-shadow: 0 0 20px rgba(0,0,0,0.4);
-        transform: translateX(250px); /* Initially hide the menu off-screen */
+        transform: translateX(250px); /* OFF-SCREEN (CLOSED STATE) */
         transition: transform 0.3s ease-in-out;
+      }
+    }
+    
+    /* === START OF MOBILE MENU FUNCTIONALITY (FIXED Z-INDEX AND STRUCTURE) === */
+    /* State class applied to body when mobile menu is open */
+    .mobile-nav-active {
+        overflow: hidden; /* Prevent scrolling when menu is open */
     }
     
     /* Backdrop/Overlay for the full screen */
@@ -279,7 +279,7 @@
     
     /* Menu Open State (Slide in) */
     .mobile-nav-active .navbar {
-        transform: translateX(0);
+        transform: translateX(0); /* ON-SCREEN (OPEN STATE) */
     }
     
     /* Styling for the list of links inside the mobile menu */
