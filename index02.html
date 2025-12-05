@@ -400,6 +400,19 @@
         border-bottom-color: #000000;
         /* === END OF ABOUT CHANGES === */
     }
+    
+    /* === START OF ABOUT LINK CHANGES (new request) === */
+    .about-section p a.youtube-link-white {
+        color: #ffffff; 
+        text-decoration: none; /* No underline */
+        font-weight: bold;
+        border-bottom: none; /* Removed existing border */
+    }
+
+    .about-section p a.youtube-link-white:hover {
+        color: #ffd1c7; /* Lighter white on hover */
+    }
+    /* === END OF ABOUT LINK CHANGES === */
 
     .about-section p a.youtube-link:hover {
         /* === START OF ABOUT CHANGES (from previous request) === */
@@ -692,11 +705,11 @@
       transform: scale(1.1);
     }
 
-    /* Contact Section - with light grey background and NO paws */
+    /* Contact Section - with white background */
     .contact-section {
       padding: 80px 20px;
       /* === START OF CONTACT CHANGES (from previous request) === */
-      background: #ffffff; /* Changed to white */
+      background: #ffffff; 
       /* === END OF CONTACT CHANGES === */
       position: relative;
     }
@@ -759,9 +772,9 @@
       font-family: 'Bangers', cursive;
       letter-spacing: 1px;
       font-size: 2.5rem;
-      /* === START OF CONTACT CHANGES (new request) === */
-      color: #ff6b35; /* Changed heading color to orange */
-      /* === END OF CONTACT CHANGES === */
+      /* === START OF CONTACT HEADING CHANGES (new request) === */
+      color: #2c2c2c; /* Changed heading color to dark grey */
+      /* === END OF CONTACT HEADING CHANGES === */
     }
 
     .contact-section .info {
@@ -774,23 +787,28 @@
       margin-bottom: 30px;
       text-align: left;
       line-height: 1.8;
-      /* === START OF CONTACT CHANGES (new request) === */
-      color: #ff6b35; /* Changed paragraph color to orange */
-      /* === END OF CONTACT CHANGES === */
+      /* === START OF CONTACT PARAGRAPH CHANGES (from previous request) === */
+      color: #ff6b35; /* Orange text */
+      /* === END OF CONTACT PARAGRAPH CHANGES === */
     }
-
+    
+    /* Global YouTube Link Style (used in Contact and About sections) */
     .youtube-link {
-      color: #ff6b35;
-      text-decoration: none;
       font-weight: bold;
-      border-bottom: 2px solid #ff6b35;
       transition: 0.3s;
     }
 
-    .youtube-link:hover {
-      color: #ff5722;
-      border-bottom-color: #ff5722;
+    /* === START OF CONTACT LINK CHANGES (new request) === */
+    .contact-section p .youtube-link {
+      color: #ff6b35; /* Orange color */
+      text-decoration: none; /* No underline */
+      border-bottom: none; /* Ensure no border */
     }
+    
+    .contact-section p .youtube-link:hover {
+      color: #ff5722;
+    }
+    /* === END OF CONTACT LINK CHANGES === */
 
     /* Footer */
     #footer {
@@ -960,11 +978,13 @@
         <p>
           Whether they're racing through the living room like action heroes, sharing a brotherly nap in the calm after the storm, or plotting their next grand escapade, Michael and Ming prove that the most unforgettable adventures start with nine lives and one unbreakable bond.
         </p>
+        <!-- The "Subscribe now" link uses inline style to ensure white, bold, no underline -->
         <p style="font-size: 20px;">
           <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" style="color: #ffffff; font-weight: bold; text-decoration: none;">Subscribe now</a> to join the Michael and Ming fan club and never miss an adventure!
         </p>
+        <!-- The youtube.com/@MichaelAndMing link in the about section uses the new class -->
         <p>
-          For more information, visit <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link">youtube.com/@MichaelAndMing</a>.
+          For more information, visit <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link youtube-link-white">youtube.com/@MichaelAndMing</a>.
         </p>
       </div>
     </div>
@@ -1068,6 +1088,7 @@
           <p>Have questions for Michael and Ming? Want to share your own cat stories or just say hello?</p>
           <p>
             Join the conversation on our YouTube channel! Comment on any of our videos and we'll respond to your questions and messages there. 
+            <!-- The youtube.com/@MichaelAndMing link in the contact section now uses text-decoration: none via the CSS change -->
             Visit us at <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link">youtube.com/@MichaelAndMing</a> 
             and be part of the Michael and Ming community!
           </p>
