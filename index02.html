@@ -128,12 +128,10 @@
       transition: color 0.5s;
     }
 
-    /* === START OF NAV COLOR CHANGE (from previous request) === */
     .navbar a:hover,
     .navbar .active {
       color: #ff6b35; /* Orange color */
     }
-    /* === END OF NAV COLOR CHANGE === */
 
     /* === START OF HEADER CHANGES (from previous request) === */
     #header:hover .navbar a {
@@ -187,7 +185,6 @@
       border: none;
       background: transparent;
       padding: 0;
-      /* Removed previous border styling */
     }
     
     .mobile-nav-toggle:focus {
@@ -244,7 +241,7 @@
       }
     }
     
-    /* === START OF MOBILE MENU FUNCTIONALITY (from previous request) === */
+    /* === START OF MOBILE MENU FUNCTIONALITY (FIXED Z-INDEX AND STRUCTURE) === */
     /* State class applied to body when mobile menu is open */
     .mobile-nav-active {
         overflow: hidden; /* Prevent scrolling when menu is open */
@@ -259,7 +256,7 @@
         width: 250px;
         background-color: #fff;
         padding: 0;
-        z-index: 10000;
+        z-index: 10001; /* FIX: Above the backdrop */
         box-shadow: 0 0 20px rgba(0,0,0,0.4);
         transform: translateX(250px); /* Initially hide the menu off-screen */
         transition: transform 0.3s ease-in-out;
@@ -277,7 +274,7 @@
         right: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.6);
-        z-index: 9999;
+        z-index: 10000; /* FIX: Above the header (9999) and below the menu (10001) */
     }
     
     /* Menu Open State (Slide in) */
@@ -313,7 +310,7 @@
         position: fixed;
         right: 20px;
         top: 35px;
-        z-index: 10001;
+        z-index: 10002; /* FIX: Highest z-index */
         transform: rotate(45deg); /* Rotate for 'X' effect */
         width: 25px;
         height: 25px;
@@ -345,7 +342,7 @@
     .mobile-nav-active .mobile-nav-toggle span {
         background-color: #364146 !important;
     }
-    /* === END OF MOBILE MENU FUNCTIONALITY === */
+    /* === END OF MOBILE MENU FUNCTIONALITY (FIXED Z-INDEX AND STRUCTURE) === */
 
 
     /* Hero Section - FIXED */
@@ -1421,11 +1418,10 @@
       }
     });
     
-    // --- START OF MOBILE MENU SCRIPT ---
+    // --- START OF MOBILE MENU SCRIPT (ADDED/FIXED) ---
     // Function to handle mobile menu toggle
     function toggleMobileNav() {
       const body = document.body;
-      const nav = document.getElementById('navbar');
       
       // Check if we need to show the menu
       if (!body.classList.contains('mobile-nav-active')) {
@@ -1449,7 +1445,7 @@
           }
       }
     }
-    // --- END OF MOBILE MENU SCRIPT ---
+    // --- END OF MOBILE MENU SCRIPT (ADDED/FIXED) ---
 
     document.addEventListener('DOMContentLoaded', function() {
       loadYouTubeThumbnails();
@@ -1460,7 +1456,7 @@
           navToggle.addEventListener('click', toggleMobileNav);
       }
       
-      // Smooth scrolling for all navigation links (desktop and mobile)
+      // Smooth scrolling for all navigation links (desktop and mobile) - FIX: Added logic to close mobile menu
       document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
@@ -1485,6 +1481,7 @@
           }
         });
       });
+      // End of anchor link fix
     });
   </script>
 
