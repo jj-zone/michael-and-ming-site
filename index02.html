@@ -808,6 +808,28 @@
     .contact-section p .youtube-link:hover {
       color: #ff5722;
     }
+    
+    /* --- NEW CONTACT BUTTON STYLE --- */
+    .contact-section .btn-contact-connect {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #ff6b35;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-top: 15px; /* Added spacing from paragraph above */
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+    }
+
+    .contact-section .btn-contact-connect:hover {
+        background: #ff5722;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+    }
     /* === END OF CONTACT LINK CHANGES === */
 
     /* Footer */
@@ -978,11 +1000,9 @@
         <p>
           Whether they're racing through the living room like action heroes, sharing a brotherly nap in the calm after the storm, or plotting their next grand escapade, Michael and Ming prove that the most unforgettable adventures start with nine lives and one unbreakable bond.
         </p>
-        <!-- The "Subscribe now" link uses inline style to ensure white, bold, no underline -->
         <p style="font-size: 20px;">
           <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" style="color: #ffffff; font-weight: bold; text-decoration: none;">Subscribe now</a> to join the Michael and Ming fan club and never miss an adventure!
         </p>
-        <!-- The youtube.com/@MichaelAndMing link in the about section uses the new class -->
         <p>
           For more information, visit <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link youtube-link-white">youtube.com/@MichaelAndMing</a>.
         </p>
@@ -1088,10 +1108,9 @@
           <p>Have questions for Michael and Ming? Want to share your own cat stories or just say hello?</p>
           <p>
             Join the conversation on our YouTube channel! Comment on any of our videos and we'll respond to your questions and messages there. 
-            <!-- The youtube.com/@MichaelAndMing link in the contact section now uses text-decoration: none via the CSS change -->
-            Visit us at <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link">youtube.com/@MichaelAndMing</a> 
-            and be part of the Michael and Ming community!
+            Visit us and be part of the Michael and Ming community!
           </p>
+          <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="btn-contact-connect">Connect Now!</a>
         </div>
       </div>
       <div>
