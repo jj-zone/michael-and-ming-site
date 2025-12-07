@@ -407,6 +407,14 @@
       z-index: 1;
     }
 
+    /* === NEW CSS FOR DARK OVERLAY IN ABOUT SECTION === */
+    .about-content-overlay {
+      background: rgba(0, 0, 0, 0.2); /* Semi-transparent dark background */
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    
     .about-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -415,12 +423,21 @@
       gap: 40px;
       align-items: start;
     }
+    /* ================================================= */
 
     @media (max-width: 768px) {
       .about-grid {
         grid-template-columns: 1fr;
       }
     }
+    
+    /* === NEW MOBILE ADJUSTMENT FOR PADDING === */
+    @media (max-width: 768px) {
+        .about-content-overlay {
+            padding: 15px;
+        }
+    }
+    /* ======================================= */
 
     .about-section h3 {
       font-family: 'Bangers', cursive;
@@ -807,7 +824,7 @@
       margin-bottom: 30px;
       text-align: left;
       line-height: 1.8;
-      color: #ff6b35;
+      color: #666;
     }
     
     .contact-section p .youtube-link {
@@ -996,27 +1013,27 @@
   </section>
 
   <section id="about" class="about-section">
-    <div class="about-grid">
-      <div>
-        <img src="assets/img/michael-and-ming-porch.png" alt="Michael and Ming on porch" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      </div>
-      <div style="text-align: left;">
-        <h3>About Michael and Ming</h3>
-        <p>
-          From the shelter to the spotlight—Michael and Ming, the dynamic duo of cats, are taking center stage. One's a cautious powerhouse with a heart of gold. The other's a fearless mastermind with lightning-fast reflexes. Together, they turn everyday life into a blockbuster of curiosity, comedy, and chaos.
-        </p>
-        <p>
-          Whether they're racing through the living room like action heroes, sharing a brotherly nap in the calm after the storm, or plotting their next grand escapade, Michael and Ming prove that the most unforgettable adventures start with nine lives and one unbreakable bond.
-        </p>
-        <p style="font-size: 20px;">
-          <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" style="color: #ffffff; font-weight: bold; text-decoration: none;">Subscribe now</a> to join the Michael and Ming fan club and never miss an adventure!
-        </p>
-        <p>
-          For more information, visit <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link youtube-link-white">youtube.com/@MichaelAndMing</a>.
-        </p>
-      </div>
-    </div>
-  </section>
+    <div class="about-content-overlay"> <div class="about-grid">
+          <div>
+            <img src="assets/img/michael-and-ming-porch.png" alt="Michael and Ming on porch" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          </div>
+          <div style="text-align: left;">
+            <h3 style="letter-spacing: 2px;">About Michael and Ming</h3>
+            <p>
+              From the shelter to the spotlight—Michael and Ming, the dynamic duo of cats, are taking center stage. One's a cautious powerhouse with a heart of gold. The other's a fearless mastermind with lightning-fast reflexes. Together, they turn everyday life into a blockbuster of curiosity, comedy, and chaos.
+            </p>
+            <p>
+              Whether they're racing through the living room like action heroes, sharing a brotherly nap in the calm after the storm, or plotting their next grand escapade, Michael and Ming prove that the most unforgettable adventures start with nine lives and one unbreakable bond.
+            </p>
+            <p style="font-size: 20px;">
+              <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" style="color: #ffffff; font-weight: bold; text-decoration: none;">Subscribe now</a> to join the Michael and Ming fan club and never miss an adventure!
+            </p>
+            <p>
+              For more information, visit <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link youtube-link-white">youtube.com/@MichaelAndMing</a>.
+            </p>
+          </div>
+        </div>
+    </div> </section>
 
   <section id="videos" class="videos-section">
     <div class="header">
